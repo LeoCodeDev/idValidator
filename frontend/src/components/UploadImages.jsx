@@ -30,9 +30,7 @@ const UploadImages = ({ handleNextStep, handlePreviousStep }) => {
 
       setUploading(false);
       handleNextStep();
-
     } catch (error) {
-
       console.error("Error uploading images:", error);
       setUploading(false);
     }
@@ -45,7 +43,10 @@ const UploadImages = ({ handleNextStep, handlePreviousStep }) => {
       </h1>
       <div className="space-y-4">
         <div>
-          <label htmlFor="frontImage" className="block text-sm font-medium text-gray-700">
+          <label
+            htmlFor="frontImage"
+            className="block text-sm font-medium text-gray-700"
+          >
             Upload front image:
           </label>
           <input
@@ -58,7 +59,10 @@ const UploadImages = ({ handleNextStep, handlePreviousStep }) => {
         </div>
         {bothSides && (
           <div>
-            <label htmlFor="reverseImage" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="reverseImage"
+              className="block text-sm font-medium text-gray-700"
+            >
               Upload back image:
             </label>
             <input
@@ -74,14 +78,14 @@ const UploadImages = ({ handleNextStep, handlePreviousStep }) => {
       <div className="flex justify-between mt-6">
         <button
           onClick={handlePreviousStep}
-          className="p-2 bg-blue-500 text-white rounded w-32"
+          className="p-2 bg-blue-500 text-white rounded w-[45%]"
         >
           Back
         </button>
         <button
           onClick={handleImageUpload}
           disabled={uploading}
-          className={`p-2 bg-blue-500 text-white rounded ${
+          className={`p-2 bg-blue-500 text-white rounded w-[45%] ${
             uploading ? "opacity-50" : ""
           }`}
         >

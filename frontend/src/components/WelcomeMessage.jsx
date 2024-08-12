@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+import { useValidationStore } from "../store/useValidationStore";
+
 const WelcomeMessage = ({ handleNextStep }) => {
+  const { reset } = useValidationStore();
+
+  useEffect(() => {
+    reset();
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="text-center">

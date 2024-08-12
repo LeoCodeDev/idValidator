@@ -6,7 +6,7 @@ import { UploadImages } from "./components/UploadImages";
 import { useValidationStore } from "./store/useValidationStore";
 import { CheckVerification } from "./components/CheckVerification";
 
-axios.defaults.baseURL = 'http://localhost:3001'
+axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
   const { setValidationData, validationData, reset } = useValidationStore();
@@ -14,13 +14,10 @@ function App() {
 
   const handleValidation = async (country, documentType) => {
     try {
-      const response = await axios.post(
-        "/createValidation",
-        {
-          country,
-          document_type: documentType,
-        }
-      );
+      const response = await axios.post("/createValidation", {
+        country,
+        document_type: documentType,
+      });
 
       setValidationData({
         validation_id: response.data.validation_id,

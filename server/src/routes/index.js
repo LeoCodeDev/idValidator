@@ -8,7 +8,7 @@ const { uploadImage } = require("../controllers/uploadImage");
 const { getValidation } = require("../controllers/getValidation");
 
 router.post("/createValidation", createValidation);
-router.post("/uploadImage", upload.array("images") ,uploadImage);
-router.get("/getValidation/:validation_id", getValidation)
+router.post("/uploadImage", upload.array("images"), uploadImage);
+router.get("/getValidation/:validation_id", getValidation);
 
 module.exports = router;

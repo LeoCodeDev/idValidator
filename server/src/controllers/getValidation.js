@@ -3,7 +3,6 @@ const axios = require("axios");
 const getValidation = async (req, res) => {
   const { validation_id } = req.params;
   console.log(req.params);
-  
 
   if (!validation_id) {
     return res.status(400).json({ error: "Please provide a validation ID" });

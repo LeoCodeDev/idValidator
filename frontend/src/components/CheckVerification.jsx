@@ -79,7 +79,7 @@ const CheckVerification = ({ handlePreviousStep, handleReset }) => {
               </span>{" "}
               {new Date(
                 data.details.document_details.date_of_birth
-              ).toLocaleDateString("es-ES", {timeZone: "UTC"})}
+              ).toLocaleDateString("es-ES", { timeZone: "UTC" })}
             </p>
             <p>
               <span className="font-semibold text-gray-700">
@@ -87,7 +87,7 @@ const CheckVerification = ({ handlePreviousStep, handleReset }) => {
               </span>{" "}
               {new Date(
                 data.details.document_details.expiration_date
-              ).toLocaleDateString("es-ES", {timeZone: "UTC"})}
+              ).toLocaleDateString("es-ES", { timeZone: "UTC" })}
             </p>
             <p>
               <span className="font-semibold text-gray-700">
@@ -111,7 +111,13 @@ const CheckVerification = ({ handlePreviousStep, handleReset }) => {
           </div>
         ) : (
           <>
-            <p className="text-lg text-gray-700 mb-4">Timer: {timer}</p>
+            {timer < 1 ? (
+              <p className="py-2 mb3 px4">Please click on results button</p>
+            ) : (
+              <p className="py-2 mb3 px4">
+                Waiting for our system verification
+              </p>
+            )}
             <button
               onClick={checkVerification}
               disabled={isButtonDisabled}
@@ -121,7 +127,7 @@ const CheckVerification = ({ handlePreviousStep, handleReset }) => {
                   : "bg-blue-500 hover:bg-blue-600"
               }`}
             >
-              Check Verification
+              Go to results {isButtonDisabled ? `${timer}` : ""}
             </button>
             <button
               onClick={handlePreviousStep}
